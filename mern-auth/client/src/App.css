@@ -1,0 +1,494 @@
+#root {
+  background-image: url('./images/loginbg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  position: fixed;
+}
+
+.bg-screen {
+  margin-right:auto;
+  margin-left:auto;
+  background-color: white;
+  opacity: 60%;
+  border-radius: 10px;
+  width:70vw;
+  height: auto;
+  color: black;
+}
+
+
+.login-header, .signin-header h1 {
+  font-family: borel;
+  color:white;
+  font-weight: 100;
+  padding-top: 6vh;
+  padding-left: 6vw;
+  padding-bottom: 2vh;
+  text-align: left;
+}
+
+.input-container input {
+  font-family: Quicksand;
+  font-weight: 300;
+  margin-bottom: 1vh;
+  
+}
+
+
+.login-title {
+font-family: Quicksand;
+font-weight: 300;
+text-align: left;
+padding-left: 2vw;
+}
+.signup-title {
+  font-family: Quicksand;
+  font-weight: 300;
+  text-align: left;
+  padding-left: 2vw;
+  }
+
+  .login-screen{
+    padding:2vh;
+    font-family: Quicksand;
+}
+
+.register-screen {
+  padding:2vh;
+}
+
+.button-container {
+  display: flex;
+  justify-content: right;
+  padding-right: 2vw;;
+}
+
+
+.button-container, a{
+  margin-bottom: 2vh;
+  font-family: Quicksand;
+  font-weight: 400;
+  font-size: small;
+  padding-left: .5vh;
+  padding-right: .5vh;
+  padding-top: .5vh;
+  padding-bottom: .5vh;
+  border-radius: 5px;
+}
+
+.button-container a {
+  padding-right: 1vw;
+}
+
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem; /* Adjust the size as needed for larger screens */
+  height: 2rem; /* Adjust the size as needed for larger screens */
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+  padding: 0;
+  margin: 1vh;
+  transition: background-color 0.3s ease;
+}
+
+.icon-circle i {
+  font-size: 1rem;
+  color: white;
+}
+
+.icon-circle:hover {
+  background-color: rgb(18, 97, 32);
+  border-color: transparent;
+}
+
+@media (max-width: 765px) {
+  .icon-circle {
+    width: 1.6rem; /* Adjust the size as needed for smaller screens */
+    height: 1.6rem; /* Adjust the size as needed for smaller screens */
+  }
+
+  .icon-circle i {
+    font-size: 1rem; /* Adjust the icon size for smaller screens (e.g., 1rem) */
+  }
+}
+
+.navbar-brand {
+  font-family: borel;
+  margin-top: 2vh;
+}
+
+.navbar-toggler:focus + .toggle-menu,
+  .navbar-toggler:active + .toggle-menu {
+    display: block;
+  }
+
+  /* Style for the toggle menu */
+  .toggle-menu {
+    position: fixed;
+    top:0;
+    right: -300px; /* Initially hidden off-screen to the right */
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    padding-right: 2vw;
+  }
+
+  .toggle-menu.open {
+    right: 0; /* Slide in from the right when open */
+  }
+
+  .toggle-menu ul {
+    padding-top: 2vh;
+    list-style: none;
+  }
+
+  .toggle-menu li {
+    padding: 10px 0;
+  }
+
+  .toggle-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .toggle-menu a:hover {
+    color: rgb(18, 97, 32);
+  }
+
+  .close-button {
+    background: none;
+    border: none;
+    color: rgb(18, 97, 32);
+    cursor: pointer;
+    font-size: 20px;
+    padding-top: 2vh;;
+  }
+
+  .sidebar-container {
+    text-align: left;
+    position:fixed;
+    width:20vw;
+    height: 100vh;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #1a1a1a;
+    color: fff;
+    }
+    
+    .sidebar-navigation li {
+      background-color: transparent;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      line-height: 20px;
+    }
+    .sidebar-navigation li a {
+      padding: 10px 15px 10px;
+      display: block;
+      color: #fff;
+    }
+    
+    .sidebar-navigation li a:active,
+    .sidebar-navigation li a:hover,
+    .sidebar-navigation li a:focus {
+      text-decoration: none;
+      outline: none;
+    }
+    .sidebar-navigation li::before {
+      background-color: rgb(18, 97, 32);
+      position: absolute;
+      content: '';
+      height: 100%;
+      left: 0;
+      top: 0;
+      -webkit-transition: width 0.2s ease-in;
+      transition: width 0.2s ease-in;
+      width: 3px;
+      
+    }
+    .sidebar-navigation li:hover::before {
+      width: 100%;
+    }
+    .sidebar-header {
+      font-size: large;
+      font-family: Quicksand;
+      color: rgb(18, 97, 32);
+      text-transform: uppercase;
+      background-color: #111111;
+      padding: 10px 15px 10px;
+      padding-top:15vh;
+    }
+    
+    @media (max-width:490px) {
+      .sidebar-header {
+        font-size: small;
+      }
+    }
+    
+    .sidebar-navigation .header::before {
+      background-color: transparent;
+    }
+    
+    .plant-category {
+      font-family: Quicksand;
+      text-decoration: none;
+    }
+    
+    @media (max-width: 765px) {
+      /* Adjust the font size for elements within the sidebar */
+      .sidebar-navigation li a {
+        width: 30%;
+        font-size: small; /* You can adjust the font size as needed */
+      }
+    }
+    @media (max-width: 660px) {
+      /* Adjust the font size for elements within the sidebar */
+      .sidebar-navigation li a {
+        font-size: xx-small; /* You can adjust the font size as needed */
+      }
+    }
+    @media (max-width: 490px) {
+      /* Adjust the font size for elements within the sidebar */
+      .sidebar-container {
+        width: 30%; /* You can adjust the font size as needed */
+      }
+    }
+
+
+    .full-create-screen {
+      display: flex;
+      flex-direction:row;
+      justify-content: space-around;
+      padding-top: 15vh;
+      background-color: #292828;
+      color:white;
+      font-family: Quicksand;
+      height:100vh;
+      padding-bottom: 1vh;
+      overflow-y: auto;
+    }
+    
+    .create-container {
+      flex: 1;
+      max-width:45vw;
+      text-align: left;
+    }
+      
+    .image-list {
+      padding-left:0;
+      padding-bottom: 5vh;
+      list-style: none;
+    }
+    
+    .image-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed #ccc;
+      text-align: center;
+      background-color: #f8f8f8;
+      color: #888;
+      border-radius: 5px;
+      cursor: pointer;
+      /* Set the width and height to create a square */
+      width: 100%;
+      padding-top: 100%; /* 1:1 aspect ratio */
+      position: relative;
+      margin-bottom:2vh; ;
+    }
+    
+    .image-placeholder p {
+      margin-top: 8px;
+    }
+    
+    /* Center the content within the square */
+    .image-placeholder i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+    }
+    .image-list li img {
+      max-width: 100%; /* Set the maximum width to 100% of the parent container */
+      max-height: 100%; /* Set the maximum height to 100% of the parent container */
+      border-radius: 5px;
+    }
+    
+    
+    .form-group label {
+      padding-bottom: 1vh;
+    }
+    
+    .form-group input {
+      background:none;
+      margin-bottom: 1vh;
+      padding:2px;
+      color:white;
+    }
+    
+    .form-control-file {
+      margin-top: 1vh;
+    }
+    
+    .form-group-description {
+      flex: 1;
+      max-width:45vw;
+      padding-top:5vh;
+    }
+    
+    .form-group-description input {
+      height: auto; /* Allow the textarea to grow vertically */
+      min-height: 50vh; /* Set a minimum height (adjust as needed) */
+      max-height: none; /* Remove any maximum height */
+      resize: vertical; /* Allow vertical resizing */
+      padding: 10px; /* Add padding for better visual appearance */
+      font-family: Quicksand;
+      font-weight: 300;
+      border: 1px solid white;
+      border-radius: 10px;
+      background: none;
+      color: white;
+      margin-bottom: 2vh;
+    }
+    
+    
+    .slideshow-container {
+      position: relative;
+      max-width: 100%; /* Set the maximum width */
+      max-height: 100%; /* Set the maximum height */
+      overflow: hidden; /* Hide overflow content */
+    }
+
+    
+    
+    .slideshow-image img {
+      width: 100%; /* Make the image fill the container */
+      height: auto;
+      margin-bottom: 5vh;
+      border-radius: 5px; 
+      object-fit: cover;/* Automatically adjust height to maintain aspect ratio */
+    }
+    
+    /* Styles for the left arrow button */
+    a.prev {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      padding: 16px;
+      cursor: pointer;
+      color: white;
+      background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+    }
+    
+    /* Styles for the right arrow button */
+    a.next {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      padding: 16px;
+      cursor: pointer;
+      color: white;
+      background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+    }
+    
+    /* Style for image delete button (you can adjust as needed) */
+    .delete-button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      position: absolute;
+      top: 5px; /* Adjust the top position as needed */
+      right: 5px; /* Adjust the right position as needed */
+    }
+    
+    .submit-listing-button {
+      border-radius: 5px;
+    }
+
+    /* Default styles for listing table */
+.listing-display {
+  margin-right: 2vw;
+  text-align: left;
+  font-family: Quicksand;
+  position: absolute;
+  padding-top: 15vh;
+  right: 0;
+  top: 0;
+  max-width: 70%;
+  height: auto;
+  overflow-y: auto;
+  background: none;
+}
+
+.listing-table-div {
+  width: 100%;
+}
+
+.listings-table {
+  max-width: 100%;
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+
+.listings-table tr {
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  display: block;
+  padding: 10px;
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+/* Media queries for different device/window sizes */
+@media screen and (max-width: 768px) {
+  .listing-display {
+    font-size: 14px; /* Adjust the font size for smaller screens */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .listing-display {
+    font-size: 8px; /* Adjust the font size for even smaller screens */
+  }
+}
+
+
+.listing-detail {
+  color: white;
+  font-family: Quicksand;
+  display: flex;
+  justify-content: space-around;
+  padding: 4vw;
+}
+
+.listing-left {
+  text-align: left;
+}
+
+.comment-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 70vw;
+}

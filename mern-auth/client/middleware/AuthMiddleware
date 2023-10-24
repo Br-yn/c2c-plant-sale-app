@@ -1,0 +1,30 @@
+const jwt = require('jsonwebtoken');
+const { secretKey } = require('./config');
+const User = require('../models/user');
+
+const authMiddleware = async (req, res, next) => {
+  const token = req.cookies.token;
+
+  if (!token) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+
+  try {
+    const decoded = jwt.verify(token, secretKey); // Verify the token
+
+    const user = await User.findById(decoded.id);
+
+    if (!user) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    // Attach the user to the request object for later use in controllers
+    req.user = user;
+
+    next(); // Continue with the next middleware or route handler
+  } catch (error) {
+    res.status(401).json({ error: 'Unauthorized' });
+  }
+};
+
+module.exports = authMiddleware;
